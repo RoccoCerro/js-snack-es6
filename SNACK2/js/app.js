@@ -24,17 +24,30 @@ const elencoStudenti = [
 console.log(elencoStudenti);
 
 const elencoStudentiMaiuscolo = [];
+const elencoStudentiMigliori = [];
+const elencoStudentiVotoEId = [];
 
 for(let i = 0; i < elencoStudenti.length; i++){
     const elemento = elencoStudenti[i];
     const elementoNome = elemento.nome;
+    const id = elemento.id;
+    const voto = elemento.voto;
     const nomeMaiusc = nomeMaiuscolo(elementoNome);
-    console.log(nomeMaiusc);
 
     // elencoStudenti[i].nome = nomeMaiusc;
     // elementoNome = nomeMaiusc;
 
-    elencoStudentiMaiuscolo.push(nomeMaiusc);
+    elencoStudentiMaiuscolo.push(studente(id, nomeMaiusc, voto));
+
+    if(voto > 70){
+        elencoStudentiMigliori.push(studente(id, elementoNome, voto));
+    }
+
+    if(voto > 70 && id > 120){
+        elencoStudentiVotoEId.push(studente(id, elementoNome, voto));
+    }
 }
 
-console.log(elencoStudentiMaiuscolo)
+console.log(elencoStudentiMaiuscolo);
+console.log(elencoStudentiMigliori);
+console.log(elencoStudentiVotoEId);
