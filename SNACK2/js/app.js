@@ -24,8 +24,8 @@ const elencoStudenti = [
 console.log(elencoStudenti);
 
 // const elencoStudentiMaiuscolo = [];
-const elencoStudentiMigliori = [];
-const elencoStudentiVotoEId = [];
+// const elencoStudentiMigliori = [];
+// const elencoStudentiVotoEId = [];
 
 // for(let i = 0; i < elencoStudenti.length; i++){
 //     const elemento = elencoStudenti[i];
@@ -59,6 +59,13 @@ const elencoStudentiMaiuscolo = elencoStudenti.map(function(el,i,array){
     }
     return newArray
 })
+
+const elencoStudentiMigliori = elencoStudentiMaiuscolo.filter((el)=>{
+    if(el.voto > 70){
+        return el
+    }
+});
+
 
 console.log(elencoStudentiMaiuscolo);
 console.log(elencoStudentiMigliori);
