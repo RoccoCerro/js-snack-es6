@@ -40,11 +40,11 @@ for(let i = 0; i < elencoStudenti.length; i++){
     elencoStudentiMaiuscolo.push(studente(id, nomeMaiusc, voto));
 
     if(voto > 70){
-        elencoStudentiMigliori.push(studente(id, elementoNome, voto));
+        elencoStudentiMigliori.push(studente(id, nomeMaiusc, voto));
     }
 
     if(voto > 70 && id > 120){
-        elencoStudentiVotoEId.push(studente(id, elementoNome, voto));
+        elencoStudentiVotoEId.push(studente(id, nomeMaiusc, voto));
     }
 }
 
