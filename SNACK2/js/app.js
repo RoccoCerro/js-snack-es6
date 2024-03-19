@@ -23,30 +23,42 @@ const elencoStudenti = [
 
 console.log(elencoStudenti);
 
-const elencoStudentiMaiuscolo = [];
+// const elencoStudentiMaiuscolo = [];
 const elencoStudentiMigliori = [];
 const elencoStudentiVotoEId = [];
 
-for(let i = 0; i < elencoStudenti.length; i++){
-    const elemento = elencoStudenti[i];
-    const elementoNome = elemento.nome;
-    const id = elemento.id;
-    const voto = elemento.voto;
-    const nomeMaiusc = nomeMaiuscolo(elementoNome);
+// for(let i = 0; i < elencoStudenti.length; i++){
+//     const elemento = elencoStudenti[i];
+//     const elementoNome = elemento.nome;
+//     const id = elemento.id;
+//     const voto = elemento.voto;
+//     const nomeMaiusc = nomeMaiuscolo(elementoNome);
 
-    // elencoStudenti[i].nome = nomeMaiusc;
-    // elementoNome = nomeMaiusc;
+//     // elencoStudenti[i].nome = nomeMaiusc;
+//     // elementoNome = nomeMaiusc;
 
-    elencoStudentiMaiuscolo.push(studente(id, nomeMaiusc, voto));
+//     elencoStudentiMaiuscolo.push(studente(id, nomeMaiusc, voto));
 
-    if(voto > 70){
-        elencoStudentiMigliori.push(studente(id, nomeMaiusc, voto));
+//     if(voto > 70){
+//         elencoStudentiMigliori.push(studente(id, nomeMaiusc, voto));
+//     }
+
+//     if(voto > 70 && id > 120){
+//         elencoStudentiVotoEId.push(studente(id, nomeMaiusc, voto));
+//     }
+// }
+
+const elencoStudentiMaiuscolo = elencoStudenti.map(function(el,i,array){
+    const nomeMaiusc = nomeMaiuscolo(el.nome);
+    const voto = el.voto;
+    const id = el.id;
+    const newArray = {
+        id: id,
+        nome: nomeMaiusc,
+        voto: voto
     }
-
-    if(voto > 70 && id > 120){
-        elencoStudentiVotoEId.push(studente(id, nomeMaiusc, voto));
-    }
-}
+    return newArray
+})
 
 console.log(elencoStudentiMaiuscolo);
 console.log(elencoStudentiMigliori);
