@@ -66,6 +66,11 @@ const elencoStudentiMigliori = elencoStudentiMaiuscolo.filter((el)=>{
     }
 });
 
+const elencoStudentiVotoEId = elencoStudentiMaiuscolo.filter((el)=>{
+    if(el.voto > 70 && el.id > 120){
+        return el
+    }
+});
 
 console.log(elencoStudentiMaiuscolo);
 console.log(elencoStudentiMigliori);
