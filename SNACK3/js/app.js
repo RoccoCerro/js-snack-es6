@@ -36,3 +36,4 @@ for (let i = 0; i < bici.length; i++){
 }
 
 console.log(`La bici più leggera è ${biciPiuLeggera} con un peso di ${pesoMinore}`)
+
