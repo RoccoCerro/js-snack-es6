@@ -40,9 +40,21 @@ const club = [
     },
 ]
 
-club.forEach((el)=>{
+club.forEach((el, i)=>{
     el.punti = getRandomIntInclusive(10,120);
     el.falliSubiti = getRandomIntInclusive(0,30)
 })
 
 console.log(club)
+
+const newClub = [];
+
+club.forEach((el)=>{
+    const {nome, falliSubiti} = el
+    newClub.push({
+        nome,
+        falliSubiti
+    })
+})
+
+console.log(newClub)

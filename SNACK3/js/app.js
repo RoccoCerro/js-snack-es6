@@ -23,17 +23,29 @@ const bici = [
     },
 ];
 
-let pesoMinore = 3000;
+let pesoMin = undefined;
 let biciPiuLeggera = "";
+let indexWithPesoMin = -1;
 
 for (let i = 0; i < bici.length; i++){
-    const elemento = bici[i];
 
-    if (elemento.peso < pesoMinore){
-        pesoMinore = elemento.peso;
-        biciPiuLeggera = elemento.nome;
+    const { peso } = bici[i]; // const peso = bici[i].peso
+
+    if (i === 0) {
+        pesoMin = peso;
+        indexWithPesoMin = 0;
+    } else {
+        if (peso < pesoMin) {
+            pesoMin = peso;
+            indexWithPesoMin = i;
+        }
     }
 }
 
-console.log(`La bici più leggera è ${biciPiuLeggera} con un peso di ${pesoMinore}`)
+const biciWithPesoMin = bici[indexWithPesoMin]; // object
+const { nome, peso } = biciWithPesoMin;
+
+console.log(nome, peso);
+
+//console.log(`La bici più leggera è ${biciPiuLeggera} con un peso di ${pesoMinore}`)
 
