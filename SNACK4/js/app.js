@@ -6,7 +6,6 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
   
-
 const club = [
     {
         nome: 'Milan',
@@ -45,9 +44,12 @@ club.forEach((el, i)=>{
     el.falliSubiti = getRandomIntInclusive(0,30)
 })
 
-console.log(club)
+console.log(club);
 
 const newClub = [];
+const ulDomElement = document.createElement("ul");
+const bodyDomElement = document.querySelector("body")
+bodyDomElement.prepend(ulDomElement);
 
 club.forEach((el)=>{
     const {nome, falliSubiti} = el
@@ -55,6 +57,12 @@ club.forEach((el)=>{
         nome,
         falliSubiti
     })
+
+    ulDomElement.innerHTML += `
+        <li>${nome}</li>
+        <li>Falli subiti: ${falliSubiti}</li>
+    `
 })
 
 console.log(newClub)
+
